@@ -1,0 +1,69 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7AA;
+}
+
+.centerize {
+    text-align:center;
+}
+
+button {
+    color:#222222;
+    font-family:times;
+    font-size:15px;
+    font-weight:bold;
+}
+
+#web-div {
+    width: 100%;
+}
+
+#score-div {
+    float: left;
+    width: 24%;
+}
+
+#canvas {
+    float: center;
+    width: 50%;
+}
+
+#comment-div {
+    float: right;
+    width: 24%;
+}
+
+.rating {
+    float:left;
+    width:300px;
+}
+.rating span { float:left; position:relative; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}

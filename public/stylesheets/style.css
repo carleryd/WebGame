@@ -1,0 +1,65 @@
+button {
+  color: #222222;
+  font-family: times;
+  font-size: 15px;
+}
+.centerize {
+  text-align: center;
+}
+/* #home-div contains #score-div #canvas #comment-div */
+#home-div {
+  width: 100%;
+}
+#score-div {
+  float: left;
+  width: 24%;
+}
+#canvas {
+  float: center;
+  width: 50%;
+}
+#comment-div {
+  float: right;
+  width: 24%;
+}
+#alias-div {
+  float: center;
+}
+/* this is the div containing all rating circles */
+.rating {
+  float: left;
+}
+.rating span {
+  /* for each rating circle span */
+  float: right;
+  position: relative;
+}
+.rating span input {
+  /* for each rating input */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+.rating span label {
+  /* design of labels(right now orange circles) */
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #FFF;
+  background: #ccc;
+  font-size: 30px;
+  margin-right: 2px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  /* for hovered and checked circles */
+  background: #F90;
+  color: #FFF;
+}

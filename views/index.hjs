@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title> {{{ title }}} </title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+
+    <script src="javascripts/angular/angular.min.js">       </script>
+    <script src="javascripts/angular/angular-route.js">     </script>
+    <script src="javascripts/angular/angular-resource.js">  </script>
+  </head>
+  <!-- This initializes the game running in canvas -->
+  <body onload="init()">
+    
+    <!-- this is the myId sent from server -->
+    <div ng-init="myID = '{{{ myID }}}'">
+      <form action="/login" method="get" class="centerize">
+        <button type="submit" formaction="/login"> Login </button>
+      </form>
+    
+      <div>
+        <!-- This is where angular views will be shown -->
+        <div ng-view></div>
+        <canvas id="canvas" width="1280" height="768" border="0px"></canvas>
+      </div>
+
+    
+      <script src="javascripts/jQuery.js">                      </script>
+
+      <script src="javascripts/main.js">                        </script>
+      <script src="javascripts/controllers/score_controller.js"></script>
+      <script src="javascripts/controllers/alias_controller.js"></script>
+      <script src="javascripts/services/server_service.js">     </script>
+
+      <script src="javascripts/Motocross/misc.js">              </script>
+      <script src="javascripts/Motocross/cp.js">                </script>
+      <script src="javascripts/Motocross/cp.extra.js">          </script>
+      <script src="javascripts/Motocross/Bike.js">              </script>
+      <script src="javascripts/Motocross/Game.js">              </script>
+      <script src="javascripts/Motocross/Level.js">             </script>
+      <script src="javascripts/Motocross/Movement.js">          </script>
+
+    </div>
+  </body>
+</html>

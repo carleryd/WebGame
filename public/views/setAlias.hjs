@@ -1,0 +1,8 @@
+<html>
+<div class="centerize" id="alias-div">
+	<h4> Choose an alias for your account! </h4>
+  	Alias:  <input type="text" ng-model="newUser.alias"/>
+  	<button type="button" ng-click="setAlias()"> Set Alias </button>
+  	<button ng-click="go('/home')"> Back </button>
+</div>
+</html>

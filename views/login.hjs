@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			* { text-align: center }
+			input {
+				color: #222222;
+			  	font-family: times;
+			  	font-size: 15px;
+			}
+		</style>
+
+		<title> {{{ title }}} </title>
+		<h2 text-align="center"> {{{ title }}} </h2>
+	</head>
+
+	<body>
+ 		<h4> Choose site to get authentication from </h4>
+
+		<form method='get', action='/login/authenticate'>
+			<input type="hidden" name="openid_identifier"
+				value="gmail.com" /> 
+			<input type="submit" value="Google Mail"/> 
+  		</form>
+
+  		<form method='get', action='/login/authenticate'>
+			<input type="hidden" name="openid_identifier" 
+				value="api.screenname.aol.com" /> 
+			<input type="submit" value="AOL"/> 
+  		</form>
+
+  		<form method='get', action='/login/authenticate'>
+			<input type="hidden" name="openid_identifier" 
+				value="www.myopenid.com" /> 
+			<input type="submit" value="OpenID"/> 
+  		</form>
+
+  		<form method='get', action='/login/authenticate'>
+			<input type="hidden" name="openid_identifier" 
+				value="https://me.yahoo.com" /> 
+			<input type="submit" value="Yahoo"/> 
+  		</form>
+
+		<br \><br \>
+
+		<form action="/" method="get">
+        	<button type="submit" formaction="/"> Go back </button>
+      	</form>
+	</body>
+</html>

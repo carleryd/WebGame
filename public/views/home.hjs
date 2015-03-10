@@ -1,0 +1,55 @@
+<!-- <html> -->
+<div class="container" id="home-div">
+  
+  <div class="centerize">
+    <h3> {{ userInfo() }} </h3>
+    <button ng-click="go('/setAlias')"> Set alias </button>
+    <br \><br \>
+  </div>
+
+  <div id="score-div">
+    <h2> Highscore for level {{ currentLevel }} </h2>
+    <table border="1" cellpadding="3" id="printTable">
+      <div style="height:400px;overflow:auto;">
+        <ol>
+          <li ng-repeat="user in users | orderBy: time | filter: validTime">
+            {{ user.alias }}
+            <span style="float: right; position: relative; right: 30px">
+              {{ user.levels[currentLevel-1].time }}
+            </span>
+          </li>
+        </ol>
+      </table>
+    </div>
+  </div>
+
+  <div id="comment-div">
+    <b> Average rating: {{ getAverageRating() }} </b>
+    <br \><br \>
+    <div class="rating">
+      <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+      <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+      <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+      <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+      <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+    </div>
+
+    <br \><br \>
+    <textarea cols="25" rows="5" ng-model="newUser.text"></textarea>
+    <br \>
+    <button type="button" ng-click="postComment()"> Comment </button>
+
+    <br \><br \>
+    <div style="height:300px;overflow:auto;">
+      <li ng-repeat="post in comments | orderBy: '-comment.date' | filter: validPostLevel">
+        <b> {{ post.comment.text }} </b> <br \> {{ printDate(post.comment.date) }} by {{ post.alias }}
+      </li>
+    </div>
+  </div>
+  <div id="game-div">
+    <button type="button" ng-click="restartLevel()"> Restart </button>
+    <button type="button" ng-click="previousLevel()"> Previous </button>
+    <button type="button" ng-click="nextLevel()"> Next </button>
+  </div>
+</div>
+<!-- </html>
